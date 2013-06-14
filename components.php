@@ -16,8 +16,12 @@
 		
 		public function makeHeader($specialContent) {
 			echo "<head>\n";
-			echo "	<script src=\"" + var here + "\"></script>\n";
-			echo "	<link href=\"" + var here + "\" rel=\"stylesheet\" tyle=\"text/css\">\n";
+			foreach ($this->scriptFiles as $sf) {
+				echo "	<script src=\"" + $sf + "\"></script>\n";
+			}
+			foreach ($this->cssFiles as $cf) {
+				echo "	<link href=\"" + $cf + "\" rel=\"stylesheet\" tyle=\"text/css\">\n";
+			}
 			echo "	" + $specialContent + "\n";
 			echo "</head>\n";
 		}
